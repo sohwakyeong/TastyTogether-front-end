@@ -7,7 +7,7 @@
 - 혼밥이 두려운 사람을 위한 혼밥 메이트 찾기 게시판 서비스 제공
 
 ## 페르소나
-![김구름](/uploads/9035494fcbc4058f2abc3d52c01e11ae/김구름.png)
+![김구름]([/uploads/9035494fcbc4058f2abc3d52c01e11ae/김구름.png](https://kdt-gitlab.elice.io/sw_track/class_05/web_2_project/team08/tastytogther-fe/uploads/9035494fcbc4058f2abc3d52c01e11ae/%E1%84%80%E1%85%B5%E1%86%B7%E1%84%80%E1%85%AE%E1%84%85%E1%85%B3%E1%86%B7.png))
 
 
 <br />
