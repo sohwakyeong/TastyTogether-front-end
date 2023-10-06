@@ -18,7 +18,7 @@
     - Test PW : qwer1234 
  <div>
 
-![타이틀](/uploads/ecd5595c37cedfbf340c7994b4848a17/타이틀.png)
+![타이틀](https://kdt-gitlab.elice.io/sw_track/class_05/web_2_project/team08/tastytogther-fe/uploads/ecd5595c37cedfbf340c7994b4848a17/%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF.png)
 
 
 <br />
@@ -146,7 +146,7 @@
  <br/>
 
  ## 기술 스택
- ![기술스택](/uploads/60c39e2ecf8be17ad43e6f4ab9bece4f/기술스택.png)
+ ![기술스택](https://kdt-gitlab.elice.io/sw_track/class_05/web_2_project/team08/tastytogther-fe/uploads/60c39e2ecf8be17ad43e6f4ab9bece4f/%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%E1%84%89%E1%85%B3%E1%84%90%E1%85%A2%E1%86%A8.png)
 
  <br/>
 
@@ -164,14 +164,14 @@
 
 
 ### 폴더 구조
-![구조](/uploads/1733fc2c63bdba818cee39f87124b465/구조.png)
+![구조](https://kdt-gitlab.elice.io/sw_track/class_05/web_2_project/team08/tastytogther-fe/uploads/1733fc2c63bdba818cee39f87124b465/%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9.png)
 
 
 ## 트러블 슈팅
-![트러블1](/uploads/45021e76b57a64c0aa65d4f41f3609f9/트러블1.png)
-![트러블2](/uploads/b221c294169999721eba016f59ce93fb/트러블2.png)
-![트러블3](/uploads/d5c3d185d2c9e8af46adc7b75da48342/트러블3.png)
-![트러블4](/uploads/98ee1b6a8c911bb542ad7a89330817f3/트러블4.png)
+![트러블1](https://kdt-gitlab.elice.io/sw_track/class_05/web_2_project/team08/tastytogther-fe/uploads/45021e76b57a64c0aa65d4f41f3609f9/%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF1.png)
+![트러블2](https://kdt-gitlab.elice.io/sw_track/class_05/web_2_project/team08/tastytogther-fe/uploads/b221c294169999721eba016f59ce93fb/%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF2.png)
+![트러블3](https://kdt-gitlab.elice.io/sw_track/class_05/web_2_project/team08/tastytogther-fe/uploads/d5c3d185d2c9e8af46adc7b75da48342/%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF3.png)
+![트러블4](https://kdt-gitlab.elice.io/sw_track/class_05/web_2_project/team08/tastytogther-fe/uploads/98ee1b6a8c911bb542ad7a89330817f3/%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF4.png)
 
 
 
