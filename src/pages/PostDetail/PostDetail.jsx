@@ -88,6 +88,13 @@ export default function PostDetail() {
             fetchCommentDelete(commentId);
         }
     };
+/**
+     * 중첩된 객체에서 값을 가져오는 함수.
+     * @param {Object} obj - 찾을 객체.
+     * @param {string} path - 객체의 경로. (예: 'board.title')
+     * @returns {any} 찾아진 값.
+     */
+
     const getNestedValue = (obj, path) => {
         return path.split('.').reduce((acc, curr) => {
             return acc && acc[curr] ? acc[curr] : null;

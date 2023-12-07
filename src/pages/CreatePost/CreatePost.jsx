@@ -18,7 +18,10 @@ export default function CreatePost() {
     const handleIconClick = () => {
         fileInputRef.current.click();
     };
-
+ /**
+     * 파일이 업로드 되었을 때 호출되는 함수.
+     * @param {React.ChangeEvent<HTMLInputElement>} event - 파일 입력 이벤트 객체.
+     */
     const handleFileUpload = (event) => {
         const selectedFile = event.target.files[0];
         if (selectedFile) {
@@ -26,7 +29,7 @@ export default function CreatePost() {
             setSelectedImage(imageURL);
         }
     };
-
+//게시물 제출처리 함수.
     const handleSubmit = async () => {
         const formData = new FormData();
         formData.append('image', fileInputRef.current.files[0]);
