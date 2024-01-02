@@ -6,15 +6,12 @@ export const Container = styled.header`
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     height: 100px;
-    padding: 0px 25px;
-    border-bottom: 1px solid lightgray;
-    background-color: white;
 `;
+export const nav = styled.nav`
+    color:transparent;
+`
 
 export const Logo = styled(Link)`
     flex-shrink: 0;
@@ -28,12 +25,6 @@ export const Img = styled.img`
 export const Form = styled.form`
     display: flex;
     align-items: center;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 600px;
-    position: absolute;
-    top: 27px;
-    left: 262px;
     background-color: transparent;
 `;
 
@@ -57,7 +48,7 @@ export const SearchInput = styled.input`
     }
 `;
 
-export const Menu = styled.nav`
+export const Menu = styled.div`
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -82,3 +73,4 @@ export const Test = styled.div`
     display: flex;
     align-items: center;
 `;
+  

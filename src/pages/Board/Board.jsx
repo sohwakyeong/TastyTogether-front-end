@@ -3,14 +3,9 @@ import { useNavigate, Link, useParams } from 'react-router-dom';
 import * as S from './style/Board.style';
 import { FiSearch } from 'react-icons/fi';
 import axios from '../../utils/axios';
-import {
-    FaMapMarkerAlt
-} from 'react-icons/fa';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-/**
- * 게시판을 나타내는 Board 컴포넌트.
- * @returns {React.ReactNode} 게시판 UI를 렌더링.
- */
 export default function Board() {
     const [text, setText] = useState('');
     const [posts, setPosts] = useState([]);
@@ -22,11 +17,7 @@ export default function Board() {
     useEffect(() => {
         fetchPosts(currentPage);
     }, [countperpage, currentPage]);
-/**
-     * 게시물을 불러오는 함수.
-     * @param {number} pageNo - 불러올 페이지 번호.
-     * @param {string} searchText - 검색 텍스트.
-     */
+
     const fetchPosts = async (pageNo = 1, searchText = '') => {
         try {
             let response;
@@ -50,32 +41,20 @@ export default function Board() {
             console.error(error);
         }
     };
-/**
-     * 페이지 변경 함수.
-     * @param {number} newPage - 이동할 페이지 번호.
-     */
+
     const handlePageChange = (newPage) => {
         setCurrentPage(newPage);
     };
- /**
-     * 검색어 처리 함수.
-     * @param {React.ChangeEvent<HTMLInputElement>} e - 입력 이벤트 객체.
-     */
+
     const handleChange = (e) => {
         setText(e.target.value);
     };
- /**
-     * 검색어 제출 함수.
-     * @param {React.FormEvent<HTMLFormElement>} e - 폼 이벤트 객체.
-     */
+
     const handleSubmit = (e) => {
         e.preventDefault();
         fetchPosts(1, text);
     };
- /**
-     * 특정 게시물 클릭 시 처리 함수.
-     * @param {string} postId - 클릭된 게시물의 ID.
-     */
+
     const handlePostClick = (postId) => {
         navigate(`/post/${postId}`);
     };
@@ -102,7 +81,7 @@ export default function Board() {
                         value={text}
                         onChange={handleChange}
                     />
-                  <S.SearchButton type="submit">검색</S.SearchButton>
+                    <S.SearchButton type="submit">검색</S.SearchButton>
                 </S.SearchForm>
                 <S.StyledBoxWrapper>
                     {posts?.map((post) => (
@@ -111,7 +90,10 @@ export default function Board() {
                                 <S.StyledBoxImage src={post.image} alt="Post" />
                             </S.StyledBoxImageWrapper>
                             <S.PostInfo>
-                                <S.PostInfoText><FaMapMarkerAlt/>{post.region}</S.PostInfoText>
+                                <S.PostInfoText>
+                                    <FaMapMarkerAlt />
+                                    {post.region}
+                                </S.PostInfoText>
                                 <S.PostInfoText>{post.title}</S.PostInfoText>
                                 <S.PostInfoText>{post.meetDate}</S.PostInfoText>
                             </S.PostInfo>

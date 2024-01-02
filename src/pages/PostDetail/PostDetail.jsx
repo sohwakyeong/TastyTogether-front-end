@@ -8,6 +8,9 @@ import {
 } from 'react-icons/fa';
 import { useParams, useNavigate } from 'react-router-dom';
 import useAxios from '../../hooks/useAxios';
+import { ModalPortal } from '../../components/Modal/ModalPortal';
+import { MyModal } from '../../components/Modal/MyModal';
+
 
 export default function PostDetail() {
     const navigate = useNavigate();
@@ -15,6 +18,15 @@ export default function PostDetail() {
     const [post, setPost] = useState(null);
     const [commentContent, setCommentContent] = useState('');
     const { authRequiredAxios } = useAxios('application/json');
+    const [modalInfo, setModalInfo] = useState({ show: false, type: '', message: '', action: null });
+
+    const showModal = (type, message, action) => {
+        setModalInfo({ show: true, type, message, action });
+    };
+    const closeModal = () => {
+        setModalInfo({ ...modalInfo, show: false });
+    };
+
 
     const fetchPostDetail = async () => {
         try {
@@ -32,11 +44,9 @@ export default function PostDetail() {
     const fetchPostDelete = async () => {
         try {
             await authRequiredAxios.delete(`/posts/${id}`);
-            alert('게시글이 성공적으로 삭제되었습니다.');
             navigate('/post');
         } catch (error) {
             console.error('Error deleting post:', error);
-            alert('게시글을 삭제하는데 실패했습니다.');
         }
     };
     const fetchCreateComment = async () => {
@@ -55,14 +65,12 @@ export default function PostDetail() {
             setCommentContent('');
         } catch (error) {
             console.error('Error creating comment:', error);
-            alert('댓글을 생성하는데 실패했습니다.');
         }
     };
 
     const fetchCommentDelete = async (commentId) => {
         try {
             await authRequiredAxios.delete(`/comments/${commentId}`);
-            alert('댓글이 성공적으로 삭제되었습니다.');
             setPost((prevPost) => {
                 return {
                     ...prevPost,
@@ -71,30 +79,17 @@ export default function PostDetail() {
             });
         } catch (error) {
             console.error('Error deleting comment:', error);
-            alert('댓글을 삭제하는데 실패했습니다.');
         }
     };
 
     const handleDelete = () => {
-        const isConfirmed = window.confirm('정말로 이 게시글을 삭제하시겠습니까?');
-        if (isConfirmed) {
-            fetchPostDelete();
-        }
+        showModal('deletePost', '정말로 이 게시글을 삭제하시겠습니까?', fetchPostDelete);
     };
 
     const handleCommentDelete = (commentId) => {
-        const isConfirmed = window.confirm('정말로 댓글을 삭제하시겠습니까?');
-        if (isConfirmed) {
-            fetchCommentDelete(commentId);
-        }
+        const action = () => fetchCommentDelete(commentId);
+        showModal('deleteComment', '정말로 댓글을 삭제하시겠습니까?', action);
     };
-/**
-     * 중첩된 객체에서 값을 가져오는 함수.
-     * @param {Object} obj - 찾을 객체.
-     * @param {string} path - 객체의 경로. (예: 'board.title')
-     * @returns {any} 찾아진 값.
-     */
-
     const getNestedValue = (obj, path) => {
         return path.split('.').reduce((acc, curr) => {
             return acc && acc[curr] ? acc[curr] : null;
@@ -103,6 +98,19 @@ export default function PostDetail() {
 
     return (
         <S.Container>
+            {modalInfo.show && (
+                <ModalPortal>
+                <MyModal
+                    title={modalInfo.type === 'deleteComment' ? '댓글 삭제' : '게시글 삭제'}
+                    message={modalInfo.message}
+                    onConfirm={() => {
+                        modalInfo.action && modalInfo.action(); // 설정된 action 실행
+                        closeModal(); // 모달 닫기
+                    }}
+                    onClose={closeModal}
+                />
+                </ModalPortal>
+            )}
             <S.DetailPost>
                 <S.PostHeader>
                     <S.TitleBox>

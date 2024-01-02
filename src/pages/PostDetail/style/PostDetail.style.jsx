@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
     min-height: 100vh;
     margin-top: 6%;
@@ -10,7 +9,7 @@ export const Container = styled.div`
 export const DetailPost = styled.div`
     border-radius: 15px;
     width: 1000px;
-    height: 1100px;
+    height: 100%; //수정
     background-color: #fff;
     border: 2px solid #ff9c5f;
     margin: auto;
@@ -111,15 +110,16 @@ export const UserBox = styled.div`
 
 export const CommentBox = styled.div`
     width: auto;
-    height: 380px;
+    height: 100%; //수정
     display: flex;
     flex-direction: column;
 `;
 export const AddComment = styled.div`
-    width: auto;
+    width: 100%;
     height: 150px;
     display: flex;
     justify-content: center;
+    align-items: center; // 댓글박스 중앙
 `;
 export const ProfileImg = styled.img`
     width: 47px;
